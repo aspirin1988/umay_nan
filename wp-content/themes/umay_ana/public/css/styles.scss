@@ -1,0 +1,384 @@
+/* НАЧАЛО ОБЩИЕ СТИЛИ */
+
+//НАЧАЛО объявляем переменные SASS
+$main-color: #460101; //тёмно красно-коричневый
+//КОНЕЦ объявляем переменные SASS
+
+body {
+  color: $main-color;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $main-color;
+  font-weight: bold;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  h6 {
+    font-size: 16px;
+  }
+}
+
+a {
+  color: $main-color;
+  &:hover {
+    color: lighten($main-color, 10);
+    text-decoration: none;
+  }
+}
+
+/* НАЧАЛО волнистые линии*/
+.zip {
+  height: 35px;
+  width: 100%;
+  position: absolute;
+  margin-top: -17px;
+}
+.zip.zip_yellow {
+  background: 50% 50%/cover url("../img/zip_yellow.png") repeat-x;
+}
+.zip.zip_green {
+  background: 50% 50%/cover url("../img/zip_green.png") repeat-x;
+}
+/* КОНЕЦ волнистые линии*/
+
+/* КОНЕЦ ОБЩИЕ СТИЛИ */
+
+/* НАЧАЛО header */
+header {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  .address {
+    margin-top: 15px;
+    @media (min-width: 767px) {
+      float: left;
+      text-align: left;
+    }
+  }
+
+  .phone-numbers {
+    @media (min-width: 767px) {
+      float: right;
+      text-align: right;
+    }
+  }
+}
+/* КОНЕЦ header */
+
+/* НАЧАЛО header */
+.uk-navbar {
+  background: transparent;
+  &.uk-active {
+    background: 50% 50%/cover url("../img/navbar_background.png") repeat-x;
+    padding-bottom: 10px;
+  }
+  ul.uk-navbar-nav {
+    text-align: center;
+    float: none;
+    &>li {
+      float: none;
+      display: inline-block;
+      &>a {
+        color: $main-color;
+        font-size: 18px;
+        font-weight: bold;
+        background: transparent;
+        text-shadow:  0 0 10px #f6ffa1,
+                      0 0 20px #f6ffa1;
+      }
+    }
+    li:hover,
+    li:focus,
+    li:active,
+    li:visited,
+    li.uk-open {
+      outline: none;
+      &>a,
+      &>a:focus {
+        background: transparent;
+      }
+    }
+    li.uk-active {
+      a {
+        background: linear-gradient(to bottom,
+                rgba(255,158,48,0.0) 0,
+                rgba(255,158,48,0.3) 20%,
+                rgba(255,158,48,0.5)  45%,
+                rgba(255,158,48,0.5)  55%,
+                rgba(255,158,48,0.3) 80%,
+                rgba(255,158,48,0.0) 100%
+              )
+      }
+    }
+  }
+  a.uk-navbar-toggle {
+    color: $main-color;
+    padding: 0;
+  }
+}
+
+.uk-offcanvas {
+  .uk-offcanvas-bar {
+    background: #80d01b;
+    .uk-nav.uk-nav-offcanvas {
+      &>li.uk-active {
+        a {
+          background: #cd5902;
+        }
+      }
+    }
+
+    p,
+    a {
+      color: $main-color;
+      text-shadow: none;
+    }
+  }
+}
+/* КОНЕЦ header */
+/* НАЧАЛО main section */
+.main-section {
+  background: 50% 50%/cover url("../img/background_main.jpg");
+  padding-bottom: 20px;
+  @media (min-width: 1200px) {
+    background: 50% 0/cover url("../img/background_main.jpg");
+    padding-bottom: 0;
+    min-height: 100vh;
+  }
+  p,
+  a {
+    text-shadow:  0 0 10px white,
+                  0 0 20px white,
+                  0 0 30px white,
+                  0 0 40px white,
+                  0 0 50px white;
+  }
+
+  img.logo {
+    margin: 0 auto;
+    padding: 15px;
+    display: block;
+  }
+}
+/* КОНЕЦ main section */
+
+/* НАЧАЛО about */
+.about_advantages {
+  background: url("../img/background_about_upper.jpg");
+  padding: 45px 0;
+
+  .uk-grid>* {
+    padding-bottom: 20px;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .circle {
+    border-radius: 50%;
+    padding-top: 50%;
+    width: 50%;
+    margin: 0 auto;
+    background: {
+      position: 50% 50%;
+      size: 100% 100%;
+      image: url("../img/about_circle_purple.png");
+      repeat: no-repeat;
+    };
+    @media (min-width: 767px) {
+      padding-top: 60%;
+      width: 60%;
+    }
+    &.alarm {
+      background-image: url("../img/about_alarm.png");
+    }
+    &.kids {
+      background-image: url("../img/about_kids.png");
+    }
+    &.personnel {
+      background-image: url("../img/about_personnel.png");
+    }
+
+    &.alphabet {
+      background-image: url("../img/about_alphabet.png");
+    }
+    &.pencil {
+      background-image: url("../img/about_pencil.png");
+    }
+    &.book {
+      background-image: url("../img/about_book.png");
+    }
+  }
+  a:hover {
+    display: block;
+    .circle.alarm{
+      background-image: url("../img/about_bear.png");
+    }
+    .circle.alphabet {
+      background-image: url("../img/about_maria.png");
+    }
+  }
+
+}
+.about_summary {
+  padding: 30px 0 15px;
+  background: 50% 100%/200% auto url("../img/background_about_bottom.jpg");
+  @media (min-width: 767px) {
+    background: 50% 100%/cover url("../img/background_about_bottom.jpg");
+  }
+  .big_bear {
+    margin-left: 15%;
+  }
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 5px white;
+    @media (min-width: 767px) {
+      margin-top: 5%;
+      float: right;
+      max-width: 45%;
+      text-align: right;
+    }
+  }
+}
+/* КОНЕЦ about */
+/* НАЧАЛО gallery */
+.gallery {
+  padding: 30px 0 15px;
+  background: 50% 100%/cover url("../img/background_gallery.jpg");
+  .uk-slidenav-position {
+    margin-bottom: 20px;
+    .uk-slideshow{
+      max-width: 725px;
+      margin: 0 auto;
+      border: 3px solid white;
+    }
+  }
+  .uk-slider-container {
+    li:hover {
+      cursor: pointer;
+    }
+    img {
+      @media (min-width: 768px) {
+        border: 3px solid white;
+      }
+    }
+  }
+}
+/* КОНЕЦ gallery */
+
+/* НАЧАЛО reviews */
+.reviews {
+  background: #8ae517;
+  padding: 30px 0;
+  img.avatar {
+    display: block;
+    max-width: 140px;
+    max-height: 140px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  p.review {
+    color: black;
+    text-align: justify;
+  }
+  p.reviewer_name {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+/* КОНЕЦ reviews */
+
+/* НАЧАЛО контакты/футер */
+footer {
+  .contacts {
+    background: 50% 100%/cover url("../img/contacts_background.png");
+    color: white;
+    text-align: center;
+    padding: 50px 0 20px;
+    font-size: 18px;
+    text-shadow:  0 0 20px black,
+                  0 0 10px black,
+                  -1px -1px 2px black,
+                  1px 1px 2px black;
+
+    margin-bottom: -5px;
+    position: relative;
+    z-index: 100;
+    a {
+      color: white;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      img.logo {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+    }
+    img.maria-with-phone {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .bottom-wave-line {
+    background: 50% 100%/auto 80% url("../img/contacts_bottom_wave_line.png") repeat-x;
+    height: 30px;
+    width: 100%;
+    margin-top: -12px;
+    position: absolute;
+  }
+}
+/* КОНЕЦ контакты/футер */
+
+/*НАЧАЛО модальное окно*/
+.modal-article {
+  text-align: justify;
+  .uk-modal-dialog {
+    background: rgba(255, 255, 255, 0.7);
+    p {
+      text-indent: 20px;
+    }
+    img {
+      border: 3px solid $main-color;
+      margin-bottom: 5px;
+      width: 100%;
+      @media (min-width: 767px) {
+        width: auto;
+        max-width: 400px;
+      }
+    }
+    img.float-right-img {
+      float: right;
+      margin-left: 15px;
+    }
+    img.float-left-img {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+}
+/*КОНЕЦ модальное окно*/
