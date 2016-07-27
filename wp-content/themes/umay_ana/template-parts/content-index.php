@@ -80,7 +80,6 @@
 <!--НАЧАЛО зелёная волнистая линия-->
 <div class="zip zip_green"></div>
 <!--КОНЕЦ зелёная волнистая линия-->
-
 <!--НАЧАЛО галерея-->
 <div class="gallery" id="gallery">
 	<div class="uk-container uk-container-center">
